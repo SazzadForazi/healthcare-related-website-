@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './Blogs.css'
 const Blogs = ({ blog }) => {
     const { date, title, des, img } = blog
     return (

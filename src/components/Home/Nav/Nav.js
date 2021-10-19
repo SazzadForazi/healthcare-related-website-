@@ -2,9 +2,11 @@ import React from 'react';
 import './Nav.css'
 import { Link } from 'react-router-dom';
 import logo from '../../../../src/images/logodoctor.png'
+import useAuth from '../../../hooks/useAuth';
 const Nav = () => {
+    const { user, logOut } = useAuth()
     return (
-        <div className="MenuBar-container navbar navbar-expand-lg navbar fixed-top navbar-light bg-light">
+        <div className="MenuBar-container navbar-expand-lg navbar navbar-expand-lg navbar fixed-top navbar-light bg-light">
             <div className="container">
                 <div className="row">
 
@@ -26,12 +28,26 @@ const Nav = () => {
                                 <Link to="/doctors" className="items">
                                     <li>Doctors</li>
                                 </Link>
-                                <Link to="contact" className="items">
+                                <Link to="/contact" className="items">
                                     <li>Contact us</li>
                                 </Link>
-                                <Link to="/blog" className="blog">
+                                <Link to="/blog" className="items">
                                     <li>Blog</li>
                                 </Link>
+                                {user?.email ?
+                                    <Link to='/login'>
+                                        <button onClick={logOut} className='btn btn-warning me-2'>Log Out</button>
+                                    </Link>
+
+                                    :
+                                    <Link to='/login'>
+                                        <button className='btn btn-warning me-2'>Log In</button>
+                                    </Link>
+                                }
+                                <div>
+                                    <h5>{user.displayName}</h5>
+                                </div>
+
                             </ul>
                         </div>
                     </div>

@@ -11,7 +11,7 @@ const Doctors = () => {
     }, [])
     return (
         <div>
-            <div className="heading">
+            <div className="heading header">
                 <h1>Our Qualified Doctors</h1>
                 <p><small>Separated they live in. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country</small></p>
             </div>

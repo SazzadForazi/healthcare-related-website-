@@ -6,5 +6,7 @@
     border-radius: 1em;
    margin-top: 5px;
    gap: 2px 5px;
-   
+   width: 350px;
+   height: 750px;
+   margin-bottom: 50px;
 }

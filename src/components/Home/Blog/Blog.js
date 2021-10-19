@@ -10,7 +10,7 @@ const Blog = () => {
             .then(data => setBlogs(data.blog))
     }, [])
     return (
-        <div className='container'>
+        <div className='container header'>
             <div className="row">
                 {
                     blogs.map(blog => <Blogs
